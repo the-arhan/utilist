@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "id": "com.thearhan.utilist.windowpin",
+  "name": "WindowPin",
+  "description": "Pins selected windows always-on-top with a subtle border indicator.",
+  "version": "1.0.0",
+  "executable": "WindowPin.exe",
+  "protocol_version": 1,
+  "capabilities": [
+    "status",
+    "activate",
+    "deactivate",
+    "toggle"
+  ],
+  "default_shortcut": "Ctrl+Shift+W"
+}
+

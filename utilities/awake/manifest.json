@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "id": "com.thearhan.utilist.awake",
+  "name": "Awake",
+  "description": "Keeps your PC and display awake on demand or for timed sessions.",
+  "version": "1.0.0",
+  "executable": "Awake.exe",
+  "protocol_version": 1,
+  "capabilities": [
+    "status",
+    "activate",
+    "deactivate",
+    "toggle",
+    "settings"
+  ],
+  "default_shortcut": "Ctrl+Shift+A"
+}
+

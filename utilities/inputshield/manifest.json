@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "id": "com.thearhan.utilist.inputshield",
+  "name": "InputShield",
+  "description": "Safely blocks keyboard and mouse input with emergency unlock.",
+  "version": "1.0.0",
+  "executable": "InputShield.exe",
+  "protocol_version": 1,
+  "capabilities": [
+    "status",
+    "activate",
+    "deactivate",
+    "toggle"
+  ],
+  "default_shortcut": "Ctrl+Shift+I"
+}
+

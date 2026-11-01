@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "example.heartbeat",
+  "name": "Heartbeat Utility",
+  "description": "A development utility used to test UTILIST integration and IPC protocol.",
+  "version": "1.0.0",
+  "executable": "HeartbeatUtility.exe",
+  "protocol_version": 1,
+  "capabilities": [
+    "status",
+    "activate",
+    "deactivate",
+    "toggle"
+  ],
+  "default_shortcut": "Ctrl+Shift+H"
+}

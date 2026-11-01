@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UtilistUtilityManifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "name",
+    "description",
+    "version",
+    "executable",
+    "protocol_version",
+    "capabilities"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)+$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 512
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+.*$"
+    },
+    "executable": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[^/\\\\]+\\.exe$"
+    },
+    "protocol_version": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 1
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "status",
+          "activate",
+          "deactivate",
+          "toggle",
+          "pause",
+          "resume",
+          "settings"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "default_shortcut": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "string"
+    },
+    "min_utilist_version": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

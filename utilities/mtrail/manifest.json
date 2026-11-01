@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "id": "com.thearhan.utilist.mtrail",
+  "name": "MTrail",
+  "description": "Hardware-accelerated reactive cursor trail.",
+  "version": "1.0.0",
+  "executable": "MTrail.exe",
+  "protocol_version": 1,
+  "capabilities": [
+    "status",
+    "activate",
+    "deactivate",
+    "toggle",
+    "settings"
+  ],
+  "default_shortcut": "Ctrl+Shift+M"
+}

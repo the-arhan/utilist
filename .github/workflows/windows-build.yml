@@ -1,0 +1,30 @@
+name: Windows Build & Test
+
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
+
+jobs:
+  build:
+    runs-on: windows-2022
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up MSVC environment
+      uses: ilammy/msvc-dev-cmd@v1
+
+    - name: Configure CMake
+      run: |
+        cmake --preset windows-msvc-release
+
+    - name: Build Project
+      run: |
+        cmake --build --preset windows-msvc-release
+
+    - name: Run Tests
+      run: |
+        ctest --preset windows-msvc-release --output-on-failure
