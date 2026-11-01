@@ -8,11 +8,11 @@ Unlike simple application launchers, UTILIST provides a robust, isolated managem
 
 ## Architecture at a Glance
 
-* **Process Isolation**: Utilities run as separate child executables encapsulated within Windows Job Objects (`JOB_OBJECT_LIMIT_KILL_ON_JOB_CLOSE`). If a utility encounters a fatal error, UTILIST remains intact and reports diagnostic information.
-* **Native IPC**: High-speed, secure local Windows Named Pipes (`\\.\pipe\utilist.<id>.<nonce>`) using 4-byte length-prefixed framing and UTF-8 JSON payloads.
-* **Independent Utilities**: Utilities do not depend on Qt. They can be built using standard C++20, Win32, DirectX, or GDI, linking only against the zero-dependency `utilist_shared` library or implementing the protocol independently.
-* **Separation of Concerns**: Distinct representation of *Enabled*, *Process Lifecycle* (`STOPPED`, `STARTING`, `RUNNING`, `STOPPING`, `ERROR`), and *Feature* states.
-* **Global Shortcut Routing**: Centralized Windows hotkey registration (`RegisterHotKey`) with conflict detection, persistence, and dispatch.
+- **Process Isolation**: Utilities run as separate child executables encapsulated within Windows Job Objects (`JOB_OBJECT_LIMIT_KILL_ON_JOB_CLOSE`). If a utility encounters a fatal error, UTILIST remains intact and reports diagnostic information.
+- **Native IPC**: High-speed, secure local Windows Named Pipes (`\\.\pipe\utilist.<id>.<nonce>`) using 4-byte length-prefixed framing and UTF-8 JSON payloads.
+- **Independent Utilities**: Utilities do not depend on Qt. They can be built using standard C++20, Win32, DirectX, or GDI, linking only against the zero-dependency `utilist_shared` library or implementing the protocol independently.
+- **Separation of Concerns**: Distinct representation of _Enabled_, _Process Lifecycle_ (`STOPPED`, `STARTING`, `RUNNING`, `STOPPING`, `ERROR`), and _Feature_ states.
+- **Global Shortcut Routing**: Centralized Windows hotkey registration (`RegisterHotKey`) with conflict detection, persistence, and dispatch.
 
 ---
 
@@ -34,11 +34,7 @@ UTILIST/
 |   `-- decisions/              # Architectural Decision Records (ADRs)
 |-- app/                        # Main UTILIST Qt 6 GUI application
 |-- shared/                     # Reusable C++20 protocol, framing, and models
-|-- utilities/                  # Manifest schema and bundled utilities
-|   |-- mtrail/                 # MTrail: Hardware-accelerated cursor trail
-|   |-- awake/                  # Awake: Sleep prevention & timed power sessions
-|   |-- inputshield/            # InputShield: Safe input blocker & emergency unlock
-|   |-- windowpin/              # WindowPin: Window pin-on-top with tracking border
+|-- utilities/                  # Manifest schema and utility ecosystem
 |   `-- examples/
 |       `-- heartbeat-utility/  # Reference development utility
 |-- tests/                      # Unit and integration test suites
@@ -62,6 +58,7 @@ UTILIST/
 UTILIST supports standardized CMake presets:
 
 ### Using CMake Presets directly
+
 ```powershell
 # Configure Debug build
 cmake --preset windows-msvc-debug
@@ -74,6 +71,7 @@ ctest --preset windows-msvc-debug --output-on-failure
 ```
 
 ### Using Automated Helper Scripts
+
 ```powershell
 # Configure
 .\scripts\configure.ps1 -Preset windows-msvc-debug
@@ -89,14 +87,14 @@ ctest --preset windows-msvc-debug --output-on-failure
 
 ## Documentation
 
-* [Architecture Specification](docs/architecture.md)
-* [IPC Protocol Specification](docs/ipc-protocol.md)
-* [Utility Integration Guide](docs/utility-integration-guide.md)
-* [Configuration Specification](docs/configuration.md)
-* [Security Model](docs/security-model.md)
-* [Build Guide](docs/build-guide.md)
-* [Testing Guide](docs/testing-guide.md)
-* [Roadmap](docs/roadmap.md)
+- [Architecture Specification](docs/architecture.md)
+- [IPC Protocol Specification](docs/ipc-protocol.md)
+- [Utility Integration Guide](docs/utility-integration-guide.md)
+- [Configuration Specification](docs/configuration.md)
+- [Security Model](docs/security-model.md)
+- [Build Guide](docs/build-guide.md)
+- [Testing Guide](docs/testing-guide.md)
+- [Roadmap](docs/roadmap.md)
 
 ---
 
